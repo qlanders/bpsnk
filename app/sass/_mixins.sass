@@ -1,0 +1,133 @@
+=va
+  font-size : 0
+  &:before
+    content: ''
+    display : inline-block
+    vertical-align : middle
+    width : 0
+    height : 100%
+
+=br($var)
+  +border-radius($var)
+
+=counter($var)
+  counter-reset: $var
+  & > li:before
+    content: counter($var)
+    counter-increment: $var
+
+=justyfy
+  text-align: justify
+  line-height: 0
+  font-size: 0
+  -ms-text-justify: newspaper
+  text-justify: newspaper
+  zoom: 1
+  -ms-text-align-last: justify
+  text-align-last: justify
+  &:after
+    content: ''
+    display: inline-block
+    width: 100%
+    height: 0
+    visibility: hidden
+    overflow: hidden
+
+=arr ($width, $height, $bg, $direction)
+  width: 0
+  height: 0
+  border-style: solid
+  @if $direction == t
+    border-width: 0 $width / 2 $height $width / 2
+    border-color: transparent transparent $bg transparent
+  @if $direction == r
+    border-width: $height / 2 0 $height / 2 $width
+    border-color: transparent transparent transparent $bg
+  @if $direction == b
+    border-width: $height $width / 2 0 $width / 2
+    border-color: $bg transparent transparent transparent
+  @if $direction == l
+    border-width: $height / 2 $width $height / 2 0
+    border-color: transparent $bg transparent transparent
+  @if $direction == tl
+    border-width: $height $width 0 0
+    border-color: $bg transparent transparent transparent
+  @if $direction == tr
+    border-width: 0 $width $height 0
+    border-color: transparent $bg transparent transparent
+  @if $direction == br
+    border-width: 0 0 $height $width
+    border-color: transparent transparent $bg transparent
+  @if $direction == bl
+    border-width: $height 0 0 $width
+    border-color: transparent transparent transparent $bg
+
+=calc($property, $expression)
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+=appearance($val: none) 
+  -webkit-appearance: $val
+  -moz-appearance: $val
+  appearance: $val
+
+=push-auto
+  margin:
+    left: auto
+    right: auto
+
+=pseudo($display: block, $pos: absolute, $content: '')
+  content: $content
+  display: $display
+  position: $pos
+  top: 0
+  left: 0
+
+=responcive-ratio($x, $y, $pseudo: false)
+  $padding: unquote(($y / $x) * 100 + "%")
+  @if $pseudo
+    &:before
+      +pseudo($pos: relative)
+      width: 100%
+      padding-top: $padding
+  @else
+    padding-top: $padding
+
+=font-source($size: false, $color: false, $weight: false, $lh: false)
+  font-family: 'Roboto', Helvetica, Arial, sans-serif
+  @if $size
+    font-size: $size
+  @if $color
+    color: $color
+  @if $weight
+    font-weight: $weight
+  @if $lh
+    line-height: $lh
+
+@function z($name)
+  @if index($z-indexes, $name)
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1
+  @else
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}'
+    @return null
+
+=mq($width, $type: max)
+  @if map_has_key($breakpoints, $width)
+    $width: map_get($breakpoints, $width)
+    @if $type == max
+      $width: $width - 1px
+    @media only screen and (#{$type}-width: $width)
+      @content
+
+=hardware($backface: true, $perspective: 1000)
+  @if $backface
+    backface-visibility: hidden
+  perspective: $perspective + px
+
+=truncate($truncation-boundary)
+  max-width: $truncation-boundary
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  -ms-text-overflow: ellipsis
