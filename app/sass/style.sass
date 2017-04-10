@@ -520,7 +520,7 @@ p
   &__form
     padding-top: 30px
     text-align: right
-  input
+  &__input
     border: 1px solid $color-borders
     line-height: 46px
     height: 46px
@@ -530,20 +530,24 @@ p
     font-size: 18px
     font-weight: 500
     padding: 0 15px
-  label
+    &_mail
+      margin-bottom: 30px
+    &_text
+      height: 157px
+      resize: none
+      margin-bottom: 45px
+    &_captcha
+      margin-bottom: 45px
+  &__label
     font-size: 16px
     font-weight: 400
     line-height: 46px
     float: left
-  textarea
-    @extend input
-    height: 157px
-    resize: none
-  &__captcha
-    display: inline-block
-    height: 46px
-    line-height: 23px !important
-    text-align: left
+    &_captcha
+      display: inline-block
+      height: 46px
+      line-height: 23px
+      text-align: left
   &__icon
     height: 92px
     width: 79px
@@ -552,7 +556,5 @@ p
   &__btn
     margin-right: 307px
 
-.captcha
-  +va
 /*-----------------------------REQUEST END---------------------------*/
 

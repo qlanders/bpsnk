@@ -177,16 +177,16 @@
 		<div class="request__icon"></div>
 		<form action="/" method="post" class="request__form">
 			<input type="hidden" name="AJAX" value="Y">
-			<label for="phone">Телефон</label>
-			<input id="phone" required="required" title="Телефон" type="text" class="request__item" name="phone">
-			<label for="email">E-mail</label>
-			<input id="email" required="required" title="E-mail" type="text" class="request__item" name="email">
-			<label for="text">Вопрос</label>
-			<textarea name="Вопрос" id="text"></textarea>
+			<label class="request__label" for="phone">Телефон</label>
+			<input class="request__input" id="phone" required="required" title="Телефон" type="text" name="phone">
+			<label class="request__label" for="email">E-mail</label>
+			<input class="request__input request__input_mail" id="email" required="required" title="E-mail" type="text" name="email">
+			<label class="request__label" for="text">Вопрос</label>
+			<textarea class="request__input request__input_text" name="Вопрос" id="text"></textarea>
 			<div class="captcha">
 				<input type="hidden" name="captcha_sid">
-				<label class="request__captcha" for="request_captcha">Введите<br> символы</label>
-				<input id="request_captcha" type="text" required="required" name="captcha_word" maxlength="50" value="" autocomplete="off">
+				<label class="request__label request__label_captcha" for="request_captcha">Введите<br> символы</label>
+				<input class="request__input request__input_captcha" id="request_captcha" type="text" required="required" name="captcha_word" maxlength="50" value="" autocomplete="off">
 			</div>
 			<button type="submit" class="g--btn g--btn_sm request__btn">отправить</button>
 		</form>
