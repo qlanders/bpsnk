@@ -36,7 +36,7 @@ a
 
 p
   line-height: 1.3
-  margin-bottom: 1rem
+  margin-bottom: 1em
 
 /*-------------------------------------------------------*/
 
@@ -48,7 +48,6 @@ p
   max-width: 1100px
   min-width: 320px
   margin: 0 auto
-  overflow: hidden
 
 .g--h1,
 .g--h2,
@@ -56,13 +55,16 @@ p
 .g--h4,
 .g--h5,
 .g--h6
-  line-height: 1.3
+  line-height: 1
   font-weight: 500
 
 .g--h1
-  font-size: 2rem
+  font-size: 45px
+  color: #FFF
+  font-weight: 500
+  margin-bottom: .5em
 .g--h2
-  font-size: 1.7rem
+  font-size: 30px
 .g--h3
   font-size: 1.5rem
 .g--h4
@@ -77,113 +79,155 @@ p
   display: inline-block
   +link-colors($color-buttons-font, $color-buttons-font, $color-buttons-font, $color-buttons-font, $color-buttons-font)
   text-decoration: none
-  font-size: 1rem
-  font-weight: bold
-  line-height: 25px
-  padding: 0 15px
+  font-size: 22px
+  font-weight: 400
+  line-height: 50px
+  width: 300px
   border: 0
   vertical-align: middle
   white-space: nowrap
-  min-width: 200px
   background-color: $color-main
   text-align: center
   cursor: pointer
-  +br(1px)
-  +transition(all .25s ease)
+  +br(0)
+  +transition(background-color .25s ease-in-out)
   &:hover
     background-color: $color-accent
   &:active
     background-color: lighten($color-accent, 5%)
   &_sm
-    min-width: 150px
-    line-height: 34px
-    font-size: 1.1rem
+    min-width: 250px
 
 /*-------------------------BUTTONS END-------------------------------*/
 
 /*-------------------------SLICK-------------------------------*/
-.slick-arrow
-  position: absolute
-  padding: 0
-  background-color: rgba(0, 0, 0, 0.22)
-  +br(50%)
-  height: 43px
-  width: 43px
-  font-size: 0
-  text-indent: -9999px
-  border: 0
-  top: 50%
-  margin-top: -21px
-  outline: none
-  cursor: pointer
-  z-index: 1
-  +transition(all .25s ease)
-  &:hover
-    background-color: rgba(0, 0, 0, 0.45)
-
-.slick-prev
-  left: 15px
-  &:before
-    content: ''
-    position: absolute
-    top: 10px
-    left: 18px
-    background-color: #FFF
-    height: 15px
-    width: 3px
-    +transform(rotate(45deg))
-  &:after
-    content: ''
-    position: absolute
-    top: 19px
-    left: 18px
-    background-color: #FFF
-    height: 15px
-    width: 3px
-    +transform(rotate(-45deg))
-.slick-next
-  right: 15px
-  &:before
-    content: ''
-    position: absolute
-    top: 10px
-    left: 21px
-    background-color: #FFF
-    height: 15px
-    width: 3px
-    +transform(rotate(-45deg))
-  &:after
-    content: ''
-    position: absolute
-    top: 19px
-    left: 21px
-    background-color: #FFF
-    height: 15px
-    width: 3px
-    +transform(rotate(45deg))
-
-.slick-dots
-  width: 100%
-  position: absolute
-  text-align: center
-  bottom: 15px
-  left: 0
-  background: transparent
-  li
-    font-size: 0
-    text-indent: -9999px
-    display: inline-block
-    height: 15px
-    width: 15px
-    +br(50%)
-    border: 1px solid #B5B5B5
-    cursor: pointer
-    margin: 0 3px
-  li.slick-active
-    background-color: #EC2B26
-    border: 1px solid #EC2B26
+//.slick-arrow
+//  position: absolute
+//  padding: 0
+//  background-color: rgba(0, 0, 0, 0.22)
+//  +br(50%)
+//  height: 43px
+//  width: 43px
+//  font-size: 0
+//  text-indent: -9999px
+//  border: 0
+//  top: 50%
+//  margin-top: -21px
+//  outline: none
+//  cursor: pointer
+//  z-index: 1
+//  +transition(all .25s ease)
+//  &:hover
+//    background-color: rgba(0, 0, 0, 0.45)
+//
+//.slick-prev
+//  left: 15px
+//  &:before
+//    content: ''
+//    position: absolute
+//    top: 10px
+//    left: 18px
+//    background-color: #FFF
+//    height: 15px
+//    width: 3px
+//    +transform(rotate(45deg))
+//  &:after
+//    content: ''
+//    position: absolute
+//    top: 19px
+//    left: 18px
+//    background-color: #FFF
+//    height: 15px
+//    width: 3px
+//    +transform(rotate(-45deg))
+//.slick-next
+//  right: 15px
+//  &:before
+//    content: ''
+//    position: absolute
+//    top: 10px
+//    left: 21px
+//    background-color: #FFF
+//    height: 15px
+//    width: 3px
+//    +transform(rotate(-45deg))
+//  &:after
+//    content: ''
+//    position: absolute
+//    top: 19px
+//    left: 21px
+//    background-color: #FFF
+//    height: 15px
+//    width: 3px
+//    +transform(rotate(45deg))
+//
+//.slick-dots
+//  width: 100%
+//  position: absolute
+//  text-align: center
+//  bottom: 15px
+//  left: 0
+//  background: transparent
+//  li
+//    font-size: 0
+//    text-indent: -9999px
+//    display: inline-block
+//    height: 15px
+//    width: 15px
+//    +br(50%)
+//    border: 1px solid #B5B5B5
+//    cursor: pointer
+//    margin: 0 3px
+//  li.slick-active
+//    background-color: #EC2B26
+//    border: 1px solid #EC2B26
 
 /*-----------------------------HEADER---------------------------*/
+.contacts
+  +pie-clearfix
+  font-size: 0
+  &__col
+    width: 50%
+    float: left
+    padding-top: 27px
+    font-size: 17px
+    &_left
+      padding-left: 35px
+      p
+        margin-bottom: 10px
+    &_right
+      padding-right: 35px
+      text-align: right
+      padding-left: 163px
+      line-height: 25px
+      p
+        position: relative
+        &:before
+          +pseudo
+          height: 46px
+          width: 40px
+          background: url('#{$path-root}images/phone_gray.png') center left no-repeat
+  &__mails
+    display: inline-block
+    position: relative
+    vertical-align: middle
+    padding-left: 45px
+    line-height: 24px
+    &:before
+      +pseudo()
+      height: 48px
+      width: 34px
+      background: url('#{$path-root}images/email_gray.png') center left no-repeat
+  p
+    font-size: 17px
+    span
+      font-weight: bold
+  a
+    display: inline-block
+    font-size: 17px
+    text-decoration: none
+    &:active
+      text-decoration: none
 
 .header
   position: relative
@@ -212,6 +256,34 @@ p
       font-size: 30px
       line-height: 68px
       font-weight: 500
+  &__description
+    text-align: center
+    padding: 257px 95px 0
+    p
+      font-size: 33px
+      font-weight: 400
+      line-height: 40px
+      color: #FFF
+  &__btn
+    position: absolute
+    bottom: 0
+    left: 50%
+    +transform(translateX(-50%) translateY(50%))
+  &__contacts
+    &__col
+      color: #fff
+    p
+      color: #fff
+      span
+        color: $color-second
+    a
+      +link-colors(#fff, #fff, #fff, #fff, #fff)
+    .contacts__mails
+      &:before
+        background-image: url('#{$path-root}images/mail.png')
+    .contacts__col_right p
+      &:before
+        background-image: url('#{$path-root}images/phone.png')
 
 
 /*-----------------------------HEADER END---------------------------*/
@@ -228,28 +300,44 @@ p
     height: 100%
   &__line
     position: absolute
+    height: 110px
     left: 0
     width: 100%
+    &_top
+      top: 0
+      background: $color-glass-1
+    &_bottom
+      top: 960px
+      background: $color-glass-1
+  &__left-field
+    position: absolute
+    left: 0
+    +calc('width', '50% - 550px')
+    &_1
+      height: 790px
+      top: 110px
+      background: $color-glass-2
+    &_2
+      background: #638ec1
+      height: 60px
+      top: 900px
+      +calc('widht', '50% - 550px')
+  &__right-field
+    position: absolute
+    left: 0
     +calc('left', '50% + 550px')
     +calc('width', '50% - 550px')
     &_1
-      height: 110px
-      background: $color-glass-1
-    &_2
       top: 110px
       height: 147px
       background: $color-glass-1
-    &_3
+    &_2
       top: 257px
       height: 60px
       background: #abcef1
-    &_4
+    &_3
       top: 317px
       height: 643px
-      background: $color-glass-1
-    &_6
-      top: 960px
-      height: 110px
       background: $color-glass-1
   &__paralel
     height: 850px
