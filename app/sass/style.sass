@@ -4,10 +4,11 @@
 //@import compass/layout/sticky-footer
 @import mixins
 @import var
-@import ../libs/slick-carousel/slick/slick
+//@import ../libs/slick-carousel/slick/slick
 //@import ../libs/CSS-Hamburgers/dist/app/css-hamburgers
 //@import bootstrap-var
 //@import ../libs/bootstrap/scss/bootstrap-grid
+
 
 html, body
   min-width: 1100px
@@ -28,7 +29,6 @@ body
 *::before,
 *::after
   +box-sizing(border-box)
-  outline: none
 
 a
   +link-colors($color-links, $color-links, $color-links, $color-links, $color-links)
@@ -49,7 +49,6 @@ p
   max-width: 1100px
   min-width: 320px
   margin: 0 auto
-  //outline: 1px dotted #999
 
 .g--h1,
 .g--h2,
@@ -530,6 +529,7 @@ p
     font-size: 18px
     font-weight: 500
     padding: 0 15px
+    outline: none
     &_mail
       margin-bottom: 30px
     &_text
@@ -557,4 +557,77 @@ p
     margin-right: 307px
 
 /*-----------------------------REQUEST END---------------------------*/
+
+/*-----------------------------ATTESTATION---------------------------*/
+
+.attestation
+  position: relative
+  background: url('#{$path-root}images/bg/4.jpg') top center no-repeat
+  +background-size(cover)
+  height: 945px
+  &__traingle
+    &_bottom
+      position: absolute
+      +calc('left', '50% - 585px')
+      top: 876px
+      +arr(70px, 37px, rgba(255, 255, 255, 0.65), b)
+      &::after
+        +pseudo()
+        height: 50px
+        width: 2px
+        top: -46px
+        left: -19px
+        background: #FFF
+        +transform(rotate(-43deg))
+    &_top
+      position: absolute
+      +calc('left', '50% + 415px')
+      top: 43px
+      +arr(70px, 37px, rgba(255,255,255,.65), t)
+      &::after
+        +pseudo()
+        height: 50px
+        width: 2px
+        top: -5px
+        left: 17px
+        background: #FFF
+        +transform(rotate(-43deg))
+  &__wrapper
+    position: relative
+    height: 100%
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    +background-image(linear-gradient(to bottom, #fff 0, #fff 13px, transparent 13px, transparent 80px, #fff 80px, #fff 86px, rgba(255,255,255, .85) 86px, rgba(255,255,255, .85) 870px, rgba(255,255,255, 1) 870px, rgba(255,255,255, 1) 876px, rgba(255,255,255, .2) 876px, rgba(255,255,255, .2) 945px))
+  &__line
+    position: absolute
+    top: 50%
+    left: -67px
+    width: 1135px
+    height: 95px
+    background-color: #FFF
+    text-align: center
+    +transform(translateY(-43px) rotate(-45deg))
+    &::before
+      +pseudo()
+      top: 0
+      left: -94px
+      +arr(95px, 95px, #fff, tr)
+    &::after
+      +pseudo()
+      top: 0
+      right: -94px
+      +arr(95px, 95px, #fff, bl)
+    span
+      font-size: 70px
+      font-weight: bold
+      text-transform: uppercase
+      line-height: 95px
+      color: #f17924
+      letter-spacing: 7px
+
+/*-----------------------------ATTESTATION END---------------------------*/
 
