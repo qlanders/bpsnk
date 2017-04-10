@@ -96,30 +96,36 @@
 			</ul>
 		</div>
 		<div class="content__face-right">
-			<h3 class="g--h3">Зарегистрированная Ростехнадзором электроизмерительная лаборатория для проведения измерений и испытаний</h3>
+			<h3 class="g--h3">Зарегистрированная Ростехнадзором электроизмерительная лаборатория для проведения измерений и
+				испытаний</h3>
 			<ul class="face-right__list">
 				<li class="face-right__item">
-					<figure class="face-right__figure"><img src="images/2/6.png" alt="Проверка сопротивления заземления" class="face-right__img">
+					<figure class="face-right__figure">
+						<img src="images/2/6.png" alt="Проверка сопротивления заземления" class="face-right__img">
 						<figcaption class="face-right__caption">Проверка сопротивления заземления</figcaption>
 					</figure>
 				</li>
 				<li class="face-right__item">
-					<figure class="face-right__figure"><img src="images/2/7.jpg" alt="Проверка сопротивления заземления" class="face-right__img">
+					<figure class="face-right__figure">
+						<img src="images/2/7.jpg" alt="Проверка сопротивления заземления" class="face-right__img">
 						<figcaption class="face-right__caption">Проверка сопротивления заземления</figcaption>
 					</figure>
 				</li>
 				<li class="face-right__item">
-					<figure class="face-right__figure"><img src="images/2/8.png" alt="Проверка сопротивления заземления" class="face-right__img">
+					<figure class="face-right__figure">
+						<img src="images/2/8.png" alt="Проверка сопротивления заземления" class="face-right__img">
 						<figcaption class="face-right__caption">Проверка сопротивления заземления</figcaption>
 					</figure>
 				</li>
 				<li class="face-right__item">
-					<figure class="face-right__figure"><img src="images/2/9.jpg" alt="Проверка сопротивления заземления" class="face-right__img">
+					<figure class="face-right__figure">
+						<img src="images/2/9.jpg" alt="Проверка сопротивления заземления" class="face-right__img">
 						<figcaption class="face-right__caption">Проверка сопротивления заземления</figcaption>
 					</figure>
 				</li>
 				<li class="face-right__item">
-					<figure class="face-right__figure"><img src="images/2/10.jpg" alt="Проверка сопротивления заземления" class="face-right__img">
+					<figure class="face-right__figure">
+						<img src="images/2/10.jpg" alt="Проверка сопротивления заземления" class="face-right__img">
 						<figcaption class="face-right__caption">Проверка сопротивления заземления</figcaption>
 					</figure>
 				</li>
@@ -135,8 +141,9 @@
 	<div class="objects__map">
 		<div class="g--wrapper objects__wrapper">
 			<div class="objects__text">
-				<h2 class="g--h4">Объекты	промышленной безопасности</h2>
-				<p class="objects__description">Проведение технической экспертизы, ремонта, монтажа, испытания и диагностики оборудования в области Ростехнадзора, Министерства Обороны, Морского и Речного регистра РФ</p>
+				<h2 class="g--h4">Объекты промышленной безопасности</h2>
+				<p class="objects__description">Проведение технической экспертизы, ремонта, монтажа, испытания и диагностики
+					оборудования в области Ростехнадзора, Министерства Обороны, Морского и Речного регистра РФ</p>
 				<ul class="objects__list">
 					<li class="objects__item"><span>Здания и сооружения</span></li>
 					<li class="objects__item"><span>Нефтеная и газовая промышленность</span></li>
@@ -164,6 +171,27 @@
 </section>
 
 <!-- OBJECTS END -->
+
+<section class="request">
+	<div class="g--wrapper request__wrapper">
+		<div class="request__icon"></div>
+		<form action="/" method="post" class="request__form">
+			<input type="hidden" name="AJAX" value="Y">
+			<label for="phone">Телефон</label>
+			<input id="phone" required="required" title="Телефон" type="text" class="request__item" name="phone">
+			<label for="email">E-mail</label>
+			<input id="email" required="required" title="E-mail" type="text" class="request__item" name="email">
+			<label for="text">Вопрос</label>
+			<textarea name="Вопрос" id="text"></textarea>
+			<div class="captcha">
+				<input type="hidden" name="captcha_sid">
+				<label class="request__captcha" for="request_captcha">Введите<br> символы</label>
+				<input id="request_captcha" type="text" required="required" name="captcha_word" maxlength="50" value="" autocomplete="off">
+			</div>
+			<button type="submit" class="g--btn g--btn_sm request__btn">отправить</button>
+		</form>
+	</div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer" id="footer">

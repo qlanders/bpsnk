@@ -103,7 +103,12 @@ p
   &:active
     background-color: lighten($color-accent, 5%)
   &_sm
-    min-width: 250px
+    width: 250px
+    height: 45px
+    line-height: 45px
+    text-transform: lowercase
+    font-size: 18px
+    font-weight: 500
 
 /*-------------------------BUTTONS END-------------------------------*/
 
@@ -504,3 +509,50 @@ p
       display: block
 
 /*-----------------------------OBJECTS END---------------------------*/
+
+
+/*-----------------------------REQUEST---------------------------*/
+
+.request
+  background: #EFF1F4
+  &__wrapper
+    padding: 55px 230px 85px
+  &__form
+    padding-top: 30px
+    text-align: right
+  input
+    border: 1px solid $color-borders
+    line-height: 46px
+    height: 46px
+    background: #FFF
+    width: 557px
+    margin-bottom: 21px
+    font-size: 18px
+    font-weight: 500
+    padding: 0 15px
+  label
+    font-size: 16px
+    font-weight: 400
+    line-height: 46px
+    float: left
+  textarea
+    @extend input
+    height: 157px
+    resize: none
+  &__captcha
+    display: inline-block
+    height: 46px
+    line-height: 23px !important
+    text-align: left
+  &__icon
+    height: 92px
+    width: 79px
+    margin-left: 85px
+    background: url('#{$path-root}images/email_big.png') 0 0 no-repeat
+  &__btn
+    margin-right: 307px
+
+.captcha
+  +va
+/*-----------------------------REQUEST END---------------------------*/
+
