@@ -48,6 +48,7 @@ p
   max-width: 1100px
   min-width: 320px
   margin: 0 auto
+  //outline: 1px dotted #999
 
 .g--h1,
 .g--h2,
@@ -66,7 +67,10 @@ p
 .g--h2
   font-size: 30px
 .g--h3
-  font-size: 1.5rem
+  color: $color-headers
+  font-size: 24px
+  font-weight: 500
+  line-height: 30px
 .g--h4
   font-size: 1.3rem
 .g--h5
@@ -215,6 +219,8 @@ p
     line-height: 24px
     &:before
       +pseudo()
+      top: 0
+      left: 0
       height: 48px
       width: 34px
       background: url('#{$path-root}images/email_gray.png') center left no-repeat
@@ -339,18 +345,142 @@ p
       top: 317px
       height: 643px
       background: $color-glass-1
-  &__paralel
+  &__bg-left
     height: 850px
-    width: 250px
+    width: 225px
     position: absolute
     top: 110px
     left: 0
     background: $color-glass-2
-  &__traingle
+  &__bg-right
+    height: 850px
+    width: 25px
     position: absolute
     top: 110px
     right: 0
+    background: $color-glass-1
+  &__traingle
+    position: absolute
+    top: 110px
+    right: 25px
     height: 850px
     width: 850px
     +background-image(linear-gradient(to bottom right, $color-glass-2 0%, $color-glass-2 50%, $color-glass-1 50%, $color-glass-1 100%))
+  &__top-line
+    position: absolute
+    height: 60px
+    width: 145px
+    top: 257px
+    right: 0
+    background-color: #abcef1
+    &::before
+      +pseudo()
+      top: 0
+      left: 20px
+      +arr(15px, 15px, #fff, tl)
+    &::after
+      +pseudo()
+      top: 35px
+      right: 0
+      width: 125px
+      height: 10px
+      background: #fff
+    &-traingles
+      position: absolute
+      top: 257px
+      right: 145px
+      +arr(60px, 60px, #abcef1, br)
+      &::before
+        +pseudo()
+        top: 0
+        left: -25px
+        +arr(45px, 45px, #fff, br)
+      &::after
+        +pseudo()
+        top: 0
+        left: 0
+        +arr(35px, 35px, #abcef1, br)
+  &__bottom-line
+    position: absolute
+    height: 60px
+    width: 225px
+    top: 900px
+    left: 0
+    background-color: #638ec1
+    &::before
+      +pseudo()
+      bottom: 0
+      right: 25px
+      +arr(15px, 15px, #fff, br)
+    &::after
+      +pseudo()
+      top: 15px
+      left: 0
+      width: 200px
+      height: 10px
+      background: #fff
+    &-traingles
+      position: absolute
+      top: 900px
+      left: 225px
+      +arr(60px, 60px, #638ec1, tl)
+      &::before
+        +pseudo()
+        top: -45px
+        left: -25px
+        +arr(45px, 45px, #fff, tl)
+      &::after
+        +pseudo()
+        top: -35px
+        left: -40px
+        +arr(35px, 35px, #638ec1, tl)
+  &__face
+    position: relative
+    padding-top: 160px
+    z-index: z('content-face')
+    .g--h3
+      width: 900px
+      margin-bottom: 20px
+    p
+      width: 800px
+      font-size: 18px
+      line-height: 25px
+    &-right
+      position: absolute
+      top: 370px
+      right: 0
+      text-align: right
+      z-index: z('content-face-right')
+      .g--h3
+        width: 380px
+        margin: 0 0 0 auto
+        line-height: 30px
+
+.face
+  &__list
+    padding-top: 12px
+    font-size: 0
+    width: 850px
+  &__item
+    display: inline-block
+    vertical-align: top
+    margin-right: 16px
+    margin-bottom: 37px
+  &__caption
+    font-size: 15px
+    font-weight: bold
+    padding-top: 8px
+    max-width: 230px
+  &-right
+    &__list
+      width: 900px
+      margin-top: 20px
+    &__item
+      @extend .face__item
+      margin-right: 0
+      margin-left: 12px
+      margin-bottom: 39px
+    &__caption
+      @extend .face__caption
+      margin: 0 0 0 auto
 
