@@ -37,13 +37,13 @@ gulp.task('compass', function () {
 		.pipe(reload({stream: true}));
 });
 
-gulp.task('scripts', function () {
-	return gulp.src([
-		'app/libs/slick-carousel/slick/slick.min.js',
-		'app/libs/fancybox/dist/jquery.fancybox.min.js'])
-		.pipe(concat('lib.js'))
-		.pipe(gulp.dest('app/js'));
-});
+// gulp.task('scripts', function () {
+// 	return gulp.src([
+// 		'app/libs/slick-carousel/slick/slick.min.js',
+// 		'app/libs/fancybox/dist/jquery.fancybox.min.js'])
+// 		.pipe(concat('lib.js'))
+// 		.pipe(gulp.dest('app/js'));
+// });
 
 gulp.task('img', function () {
 	return gulp.src('app/images/**/*')
@@ -60,13 +60,13 @@ gulp.task('clean', function () {
 	return del.sync('dist');
 });
 
-gulp.task('watch', ['sync', 'compass', 'scripts'], function () {
+gulp.task('watch', ['sync', 'compass'/*, 'scripts'*/], function () {
 	gulp.watch('app/sass/**/*.sass', ['compass']);
 	gulp.watch('app/*.html', reload);
 	gulp.watch('app/**/*.js', reload);
 });
 
-gulp.task('build', ['clean', 'compass', 'img', 'scripts'], function () {
+gulp.task('build', ['clean', 'compass', 'img'/*, 'scripts'*/], function () {
 
 	var buildCss = gulp.src('app/css/*.css')
 		.pipe(uncss({
@@ -80,8 +80,8 @@ gulp.task('build', ['clean', 'compass', 'img', 'scripts'], function () {
 	var buildJs = gulp.src('app/js/custom.js')
 		.pipe(gulp.dest('dist/js'));
 
-	var buildLibsJs = gulp.src('app/js/lib.js')
-		.pipe(gulp.dest('dist/js'));
+	// var buildLibsJs = gulp.src('app/js/lib.js')
+	// 	.pipe(gulp.dest('dist/js'));
 
 	var buildHtml = gulp.src('app/*.html')
 		.pipe(gulp.dest('dist'));

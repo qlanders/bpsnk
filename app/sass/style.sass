@@ -4,6 +4,7 @@
 //@import compass/layout/sticky-footer
 @import mixins
 @import var
+@import icons
 //@import ../libs/slick-carousel/slick/slick
 //@import ../libs/CSS-Hamburgers/dist/app/css-hamburgers
 //@import bootstrap-var
@@ -46,8 +47,7 @@ p
   overflow: hidden
 
 .g--wrapper
-  max-width: 1100px
-  min-width: 320px
+  width: 1100px
   margin: 0 auto
 
 .g--h1,
@@ -57,26 +57,27 @@ p
 .g--h5,
 .g--h6
   line-height: 1
-  font-weight: 500
+  font-weight: 600
 
 .g--h1
   font-size: 45px
   color: #FFF
-  font-weight: 500
+  font-weight: 600
   margin-bottom: .5em
 .g--h2
   font-size: 30px
 .g--h3
   color: $color-headers
   font-size: 24px
-  font-weight: 500
+  font-weight: 600
   line-height: 30px
 .g--h4
   font-size: 44px
-  font-weight: 500
+  font-weight: 600
   color: $color-headers
 .g--h5
-  font-size: 1.1rem
+  font-size: 30px
+  font-weight: bold
 .g--h6
   font-size: 1rem
 
@@ -104,10 +105,10 @@ p
   &_sm
     width: 250px
     height: 45px
-    line-height: 45px
+    line-height: 35px
     text-transform: lowercase
     font-size: 18px
-    font-weight: 500
+    font-weight: 600
 
 /*-------------------------BUTTONS END-------------------------------*/
 
@@ -186,7 +187,7 @@ p
       text-transform: uppercase
       font-size: 30px
       line-height: 68px
-      font-weight: 500
+      font-weight: 600
   &__description
     text-align: center
     padding: 257px 95px 0
@@ -254,7 +255,6 @@ p
       background: #638ec1
       height: 60px
       top: 900px
-      +calc('widht', '50% - 550px')
   &__right-field
     position: absolute
     left: 0
@@ -446,7 +446,7 @@ p
       +br(50%)
     span
       font-size: 22px
-      font-weight: 500
+      font-weight: 600
       color: $color-headers
       line-height: 24px
   &__description
@@ -628,6 +628,88 @@ p
       line-height: 95px
       color: #f17924
       letter-spacing: 7px
+  &__arm
+    position: absolute
+    top: 45px
+    left: 50%
+    +transform(translateX(-50%))
+    width: 225px
+    height: 225px
+    +br(50%)
+    background: #FFF
+    +box-shadow(0 2px 0 0 rgba(0,0,0,.1))
+    text-align: center
+    +va
+    img
+      display: inline-block
+      vertical-align: middle
+  &__left
+    position: absolute
+    top: 150px
+    left: 0
+  &__icons
+    position: relative
+    height: 65px
+    width: 145px
+    padding: 0 12px
+    white-space: nowrap
+    margin-bottom: 35px
+    +va
+    background: #7694c0
+    &_left
+      i
+        &:first-child
+          margin-right: 25px
+      &::after
+        +pseudo
+        +arr(65px, 65px, #7694c0, tl)
+        top: 0
+        left: 100%
+    &_right
+      margin-right: 0
+      margin-left: auto
+      i
+        &:first-child
+          margin-right: 15px
+      &::after
+        +pseudo()
+        +arr(65px, 65px, #7694c0, br)
+        top: 0
+        right: 100%
+  .g--h5
+    color: #ef4125
+    line-height: 33px
+    margin-bottom: 30px
+    span
+      text-transform: uppercase
+  &__item
+    position: relative
+    font-size: 24px
+    font-weight: 400
+    line-height: 26px
+    padding-left: 30px
+    margin-bottom: 16px
+    span
+      text-transform: uppercase
+    &::before
+      +pseudo()
+      height: 17px
+      width: 17px
+      background: #7694c0
+      top: 6px
+      left: 0
+  &__right
+    position: absolute
+    top: 150px
+    right: 0
+    text-align: right
+    .attestation__item
+      padding-left: 0
+      padding-right: 30px
+      &::before
+        left: auto
+        right: 0
+
 
 /*-----------------------------ATTESTATION END---------------------------*/
 
