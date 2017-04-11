@@ -710,6 +710,120 @@ p
         left: auto
         right: 0
 
-
 /*-----------------------------ATTESTATION END---------------------------*/
+
+/*-----------------------------VERIFICATION---------------------------*/
+
+.verification
+  position: relative
+  background: #fff url('#{$path-root}images/bg/5.jpg') top center no-repeat
+  +background-size(cover)
+  &__wrapper
+    padding-top: 95px
+    padding-bottom: 15px
+  &__topline
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 13px
+    background: #fff
+  &__midline
+    position: absolute
+    width: 100%
+    top: 270px
+    left: 0
+    height: 15px
+    background: #e5edf3
+    &::after
+      +pseudo()
+      width: 1100px
+      height: 59px
+      top: 0
+      +calc('left', '50% - 550px')
+      background: url('#{$path-root}images/line.png') 0 0 no-repeat
+  &__showcase
+    background: #FFF
+    & > img
+      position: relative
+      top: -25px
+      left: 20px
+    .g--h2
+      display: inline-block
+      vertical-align: top
+      padding: 50px 0 50px 40px
+      font-size: 38px
+      font-weight: 400
+      color: #0066b3
+      line-height: 42px
+      span
+        font-weight: bold
+  &-pict
+    &__list
+      padding: 0 60px
+      font-size: 0
+      +justyfy
+      &_top
+        padding-top: 50px
+      &_bottom
+        padding-bottom: 40px
+    &__item
+      display: inline-block
+      vertical-align: middle
+  &__list
+    padding: 40px 50px
+    background: rgba(#fff, .6)
+  &__item
+    position: relative
+    font-size: 13px
+    font-weight: 400
+    line-height: 18px
+    padding-left: 10px
+    &::before
+      +pseudo()
+      height: 7px
+      width: 7px
+      background-color: #000
+      +br(50%)
+      top: 7px
+      left: 0
+    span
+      font-weight: bold
+
+.delivery
+  background: #FFF
+  &__ic-wrapper
+    margin-top: 80px
+    margin-left: 50px
+    display: inline-block
+    height: 110px
+    width: 125px
+    background: #0091D1
+    +va
+    text-align: center
+  .g--h2
+    display: inline-block
+    vertical-align: top
+    padding: 72px 20px 60px 30px
+    font-size: 38px
+    font-weight: 400
+    color: #0066b3
+    line-height: 42px
+    span
+      font-weight: bold
+  &__list
+    font-size: 0
+    overflow: hidden
+    white-space: nowrap
+    padding-bottom: 70px
+  &__item
+    display: inline-block
+    vertical-align: top
+    img
+      border: 1px solid #FFF
+      border-left: 0
+    &:first-child
+      border-left: 1px solid #FFF
+
+/*-----------------------------VERIFICATION END---------------------------*/
 
