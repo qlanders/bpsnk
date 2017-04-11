@@ -67,6 +67,17 @@ gulp.task('watch', ['sync', 'compass'/*, 'scripts'*/], function () {
 	gulp.watch('app/**/*.js', reload);
 });
 
+gulp.task('buildCss', ['clean', 'compass'], function () {
+
+	var buildCss = gulp.src('app/css/*.css')
+		.pipe(uncss({
+			html: ['app/index.html']
+		}))
+		.pipe(cssmin())
+		.pipe(gulp.dest('dist/css'));
+
+});
+
 gulp.task('build', ['clean', 'compass', 'img'/*, 'scripts'*/], function () {
 
 	var buildCss = gulp.src('app/css/*.css')
