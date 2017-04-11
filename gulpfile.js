@@ -8,6 +8,7 @@ var gulp        = require('gulp'),
     imgMin      = require('gulp-imagemin'),
     pngquant    = require('imagemin-pngquant'),
     concat      = require('gulp-concat'),
+    cssmin      = require('gulp-cssmin'),
     compass     = require('gulp-compass');
 
 
@@ -72,6 +73,7 @@ gulp.task('build', ['clean', 'compass', 'img'/*, 'scripts'*/], function () {
 		.pipe(uncss({
 			html: ['app/index.html']
 		}))
+		.pipe(cssmin())
 		.pipe(gulp.dest('dist/css'));
 
 	var buildFonts = gulp.src('app/fonts/**/*')
