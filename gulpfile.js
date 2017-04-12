@@ -61,13 +61,17 @@ gulp.task('clean', function () {
 	return del.sync('dist');
 });
 
+gulp.task('cleanCss', function () {
+	return del.sync('dist/css/**/*.*');
+});
+
 gulp.task('watch', ['sync', 'compass'/*, 'scripts'*/], function () {
 	gulp.watch('app/sass/**/*.sass', ['compass']);
 	gulp.watch('app/*.html', reload);
 	gulp.watch('app/**/*.js', reload);
 });
 
-gulp.task('buildCss', ['clean', 'compass'], function () {
+gulp.task('buildCss', ['cleanCss', 'compass'], function () {
 
 	var buildCss = gulp.src('app/css/*.css')
 		.pipe(uncss({
