@@ -42,8 +42,7 @@ gulp.task('scripts', function () {
 	return gulp.src([
 		'app/libs/inputmask/inputmask.min.js',
 		'app/libs/inputmask/jquery.inputmask.min.js',
-		'app/libs/inputmask/phone-codes/phone.min.js',
-		'app/libs/inputmask/phone-codes/phone-ru.min.js',
+		'app/libs/inputmask/phone-codes/phone.min.js'
 		])
 		.pipe(concat('lib.js'))
 		.pipe(gulp.dest('app/js'));
