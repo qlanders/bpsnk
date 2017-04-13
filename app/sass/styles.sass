@@ -578,6 +578,11 @@ b, strong
     display: inline-block
     vertical-align: middle
 
+.g--error
+  outline: 1px solid #F13822
+  background: lighten(#F13822, 40%)
+
+
 /*-----------------------------REQUEST END---------------------------*/
 
 /*-----------------------------ATTESTATION---------------------------*/
@@ -923,11 +928,13 @@ b, strong
 .popup
   position: absolute
   left: 50%
-  +transform(translateX(-50%))
+  top: 50%
+  +transform(translateX(-50%) translateY(-50%))
   width: 570px
   padding: 50px 75px 55px
   text-align: center
   background: #FFF
+  z-index: 100
   &__close
     position: absolute
     top: 20px
@@ -983,5 +990,16 @@ b, strong
     text-align: center
     line-height: 32px
     margin-bottom: 0
+
+
+#ajax_wrap
+  position: fixed
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  background: rgba(#000, .35)
+  display: none
+  z-index: 90
 
 /*--------------------------POPUPS END--------------------------------*/

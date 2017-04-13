@@ -12,7 +12,6 @@
 </head>
 <body style="background-color: #6790BB;">
 
-
 <!-- HEADER -->
 <header class="header">
 	<div class="header__line"></div>
@@ -182,7 +181,7 @@
 		<form action="/" method="post" class="request__form">
 			<input type="hidden" name="AJAX" value="Y">
 			<label class="request__label" for="phone">Телефон</label>
-			<input class="request__input" id="phone" required="required" title="Телефон" type="text" name="phone">
+			<input class="request__input request__input_phone" id="phone" required="required" title="Телефон" type="text" name="phone">
 			<label class="request__label" for="email">E-mail</label>
 			<input class="request__input request__input_mail" id="email" required="required" title="E-mail" type="text" name="email">
 			<label class="request__label" for="text">Вопрос</label>
@@ -398,7 +397,7 @@
 		<form action="/" method="post" class="request__form">
 			<input type="hidden" name="AJAX" value="Y">
 			<label class="request__label" for="phone_bot">Телефон</label>
-			<input class="request__input" id="phone_bot" required="required" title="Телефон" type="text" name="phone">
+			<input class="request__input request__input_phone" id="phone_bot" required="required" title="Телефон" type="text" name="phone">
 			<label class="request__label" for="email_bot">E-mail</label>
 			<input class="request__input request__input_mail" id="email_bot" required="required" title="E-mail" type="text" name="email">
 			<label class="request__label" for="text_bot">Вопрос</label>
@@ -456,6 +455,7 @@
 </div>
 
 <script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="js/lib.js"></script>
 <script src="js/custom.js"></script>
 </body>
 </html>
